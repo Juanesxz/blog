@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LAVAVEL</title>
-</head>
-<body>
+<x-app-layout>
+
+    <h1>Aqui estan todos los posts</h1>
+    <a href="{{ route('posts.create') }}">Nuevo post</a>
+    <ul>
+        @foreach ($posts as $post)
+            <li>
+                <a href="{{ route('posts.show', $post) }}">
+                    {{ $post->title }}
+                </a>
+            </li>
+        @endforeach
 
 
-    <h1>post</h1>
-    
-</body>
-</html>
+        {{ $posts->links() }}
+
+    </ul>
+    </x-app->

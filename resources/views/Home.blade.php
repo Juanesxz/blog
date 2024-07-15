@@ -1,9 +1,9 @@
-@extends("layouts.app")
+@extends('layouts.app')
 
 
-@section("title", "laravel" )
+@section('title', 'laravel')
 
-@push("css")
+@push('css')
     <style>
         body {
             background-color: rgb(136, 74, 74)
@@ -11,7 +11,7 @@
     </style>
 @endpush
 
-@section("content")
+@section('content')
 
     <div class="max-w-4xl mx-auto px-4">
 
@@ -19,16 +19,16 @@
 
 
         <x-alert type="danger" class="mb-4">
-            <x-slot name="title" >
+            <x-slot name="title">
                 Titulo de la alerta
             </x-slot>
 
-            <x-slot name="contenido" >
+            <x-slot name="contenido">
                 otra monda
             </x-slot>
             contenido de la alerta
         </x-alert>
-    
+
 
     </div>
 
