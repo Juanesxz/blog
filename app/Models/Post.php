@@ -12,6 +12,18 @@ class Post extends Model
     protected $tabla = 'posts';
 
 
+    // protected $fillable = [
+    //     'title',
+    //     'slug',
+    //     'category',
+    //     'content',
+    // ];
+
+
+    protected $guarded = [
+        "is_active",
+    ];
+
 
     protected function casts(): array
     {
@@ -33,5 +45,10 @@ class Post extends Model
                 return ucfirst($value);
             }
         );
+    }
+
+    public function getRouteKeyName()
+    {
+        return "slug";
     }
 }
